@@ -1,6 +1,3 @@
-python -m pip install xlwings
-python -m pip install streamlit
-
 import requests
 import pandas as pd
 import numpy as np
