@@ -1,5 +1,3 @@
-pip freeze >requirements.txt
-
 import requests
 import pandas as pd
 import numpy as np
