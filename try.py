@@ -1,4 +1,3 @@
-import yfinance as yf
 from datetime import date,timedelta
 
 def nifty_cash(date,symbol):
