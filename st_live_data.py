@@ -99,9 +99,9 @@ def get_dataframe(ticker):
                         ocdata.append(info)
 
             df = pd.DataFrame(ocdata)
-            wb = xw.Book("optionchaintracker.xlsx")
-            st = wb.sheets("vedl")
-            st.range("A1").value = df
+            #wb = xw.Book("optionchaintracker.xlsx")
+            #st = wb.sheets("vedl")
+            #st.range("A1").value = df
             #print(df)
             
             
