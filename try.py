@@ -29,6 +29,7 @@ def extract_monthly_futidx_data(start_date,finish_date,symbol):
   reqdata['TIMESTAMP']=[datetime.datetime.strptime(i, "%d-%b-%Y").date() for i in reqdata['TIMESTAMP']]
   reqdata['EXPIRY_DT']=[datetime.datetime.strptime(i, "%d-%b-%Y").date() for i in reqdata['EXPIRY_DT']]
   reqdata=reqdata.sort_values(by=['EXPIRY_DT','TIMESTAMP'],ignore_index=True)
-  st.write(reqdata)
+  return reqdata
   
-extract_monthly_futidx_data(date(2024,5,6),date(2024,5,13),"NIFTY")
+data=extract_monthly_futidx_data(date(2024,5,6),date(2024,5,13),"NIFTY")
+st.dataframe(data)
