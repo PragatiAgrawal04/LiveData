@@ -6,6 +6,7 @@ import pandas as pd
 from datetime import date
 import datetime
 import numpy as np
+import streamlit as st
 
 def extract_monthly_futidx_data(start_date,finish_date,symbol):
   sdate=str(start_date.strftime("%d-%m-%Y"))
