@@ -9,10 +9,8 @@ import numpy as np
 import streamlit as st
 
 def extract_monthly_futidx_data(start_date,finish_date,symbol):
-  #sdate=str(start_date.strftime("%d-%m-%Y"))
-  #edate=str(finish_date.strftime("%d-%m-%Y"))
-  sdate=start_date
-  edate=finish_date
+  sdate=str(start_date.strftime("%d-%m-%Y"))
+  edate=str(finish_date.strftime("%d-%m-%Y"))
   url = "https://www.nseindia.com/api/historical/foCPV?from="+sdate+"&to="+edate+"&instrumentType=FUTIDX&symbol="+symbol
   headers = {
       'accept': 'application/json, text/javascript, */*; q=0.01',
@@ -33,9 +31,8 @@ def extract_monthly_futidx_data(start_date,finish_date,symbol):
   st.write(reqdata)
 
 today= date.today()
-start_date=today.strftime("%Y-%m-%d")
 next_date=today+timedelta(10)
 shares = pd.read_csv("FNO INDICES.csv")
 share_list = list(shares["SYMBOL"])
 selected_option = st.selectbox("Share List", share_list)
-extract_monthly_futidx_data(start_date,next_date,selected_option)
+extract_monthly_futidx_data(today,next_date,selected_option)
