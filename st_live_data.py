@@ -2,7 +2,7 @@ pip install -r requirements.txt
 import requests
 import pandas as pd
 import numpy as np
-import time
+#import time
 import xlwings as xw
 from bs4 import BeautifulSoup
 import datetime
