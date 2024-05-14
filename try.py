@@ -32,9 +32,9 @@ def extract_monthly_futidx_data(start_date,finish_date,symbol):
   st.write(reqdata)
 
 today= date.today()
-today=today.strftime("%Y-%m-%d")
+start_date=today.strftime("%Y-%m-%d")
 next_date=today+timedelta(10)
 shares = pd.read_csv("FNO INDICES.csv")
 share_list = list(shares["SYMBOL"])
 selected_option = st.selectbox("Share List", share_list)
-extract_monthly_futidx_data(today,next_date,selected_option)
+extract_monthly_futidx_data(start_date,next_date,selected_option)
