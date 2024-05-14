@@ -1,5 +1,11 @@
 from datetime import date,timedelta
-
+import requests
+import zipfile
+import io
+import pandas as pd
+from datetime import date
+import datetime
+import numpy as np
 def nifty_cash(date,symbol):
   data=yf.download(symbol,start=date,end=date+timedelta(1),interval='5m')
   data=pd.DataFrame(data)
