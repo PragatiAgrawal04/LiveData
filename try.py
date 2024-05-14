@@ -30,5 +30,11 @@ def extract_monthly_futidx_data(start_date,finish_date,symbol):
   reqdata['EXPIRY_DT']=[datetime.datetime.strptime(i, "%d-%b-%Y").date() for i in reqdata['EXPIRY_DT']]
   reqdata=reqdata.sort_values(by=['EXPIRY_DT','TIMESTAMP'],ignore_index=True)
   st.write(reqdata)
-  
-extract_monthly_futidx_data(date(2024,5,6),date(2024,5,13),"NIFTY")
+
+today= date.today()
+today=today.strftime("%Y-%m-%d")
+next_date=today+timedelta(10)
+shares = pd.read_csv("FNO INDICES.csv")
+share_list = list(shares["SYMBOL"])
+selected_option = st.selectbox("Share List", share_list)
+extract_monthly_futidx_data(today,next_date,selected_option)
