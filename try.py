@@ -32,4 +32,4 @@ def extract_monthly_futidx_data(start_date,finish_date,symbol):
   return reqdata
   
 data=extract_monthly_futidx_data(date(2024,5,6),date(2024,5,13),"NIFTY")
-st.dataframe(data)
+st.write(data)
