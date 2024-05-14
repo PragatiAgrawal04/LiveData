@@ -28,13 +28,6 @@ def extract_monthly_futidx_data(start_date,finish_date,symbol):
   reqdata['TIMESTAMP']=[datetime.datetime.strptime(i, "%d-%b-%Y").date() for i in reqdata['TIMESTAMP']]
   reqdata['EXPIRY_DT']=[datetime.datetime.strptime(i, "%d-%b-%Y").date() for i in reqdata['EXPIRY_DT']]
   reqdata=reqdata.sort_values(by=['EXPIRY_DT','TIMESTAMP'],ignore_index=True)
-  return reqdata
-
-def execute(date1, date2, sym):
-  reqdata=extract_monthly_futidx_data(date1,date2,sym)
-  #futdata=reqdata.drop(['INSTRUMENT','OPTION_TYPE','MARKET_LOT','STRIKE_PRICE','MARKET_TYPE','TOT_TRADED_QTY','TOT_TRADED_VAL'],axis=1)
-  #futdata=futdata[['SYMBOL','TIMESTAMP','UNDERLYING_VALUE','EXPIRY_DT','CLOSING_PRICE','PREV_CLS','LAST_TRADED_PRICE','OPENING_PRICE','TRADE_HIGH_PRICE','TRADE_LOW_PRICE','SETTLE_PRICE','OPEN_INT','CHANGE_IN_OI']]
-  #futdata.iloc[:,4:]=futdata.iloc[:,4:].astype(float)
-  #actfutdata=action_setting(futdata)
-  st.dataframe(reqdata)
-execute(date(2024,5,6),date(2024,5,13),"NIFTY")
+  st.write(reqdata)
+  
+extract_monthly_futidx_data(date(2024,5,6),date(2024,5,13),"NIFTY")
