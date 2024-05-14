@@ -9,9 +9,10 @@ import numpy as np
 import streamlit as st
 
 def extract_monthly_futidx_data(start_date,finish_date,symbol):
-  sdate=str(start_date.strftime("%d-%m-%Y"))
-  edate=str(finish_date.strftime("%d-%m-%Y"))
-
+  #sdate=str(start_date.strftime("%d-%m-%Y"))
+  #edate=str(finish_date.strftime("%d-%m-%Y"))
+  sdate=start_date
+  edate=finish_date
   url = "https://www.nseindia.com/api/historical/foCPV?from="+sdate+"&to="+edate+"&instrumentType=FUTIDX&symbol="+symbol
   headers = {
       'accept': 'application/json, text/javascript, */*; q=0.01',
