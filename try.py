@@ -36,6 +36,10 @@ start_date=today-timedelta(10)
 shares = pd.read_csv("FNO INDICES.csv")
 share_list = list(shares["SYMBOL"])
 selected_option = st.selectbox("Share List", share_list)
+<!DOCTYPE = HTML>
+<h>
 st.write("Start Date:",start_date)
 st.write("Today's Date:",today)
+</h>
+ <>
 extract_monthly_futidx_data(start_date,today,selected_option)
