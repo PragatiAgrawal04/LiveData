@@ -1,11 +1,11 @@
 import requests
+import streamlit as st
 import pandas as pd
 import numpy as np
 #import time
 import xlwings as xw
 from bs4 import BeautifulSoup
 import datetime
-import streamlit as st
 st.set_page_config(page_title="Dashboard", layout="wide")
 
 TWO_PERCENT_MARKET_PRICE = 0.0
