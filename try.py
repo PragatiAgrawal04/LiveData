@@ -55,8 +55,8 @@ def print_curr_val():
       }
   response = pd.DataFrame(requests.get(url, headers=headers).json()['marketState'])
   curr_val=response.loc[response['index']=="NIFTY 50"]
-  st.write("Underlying Value:",curr_val['last'].item())
-  st.write(curr_val['variation'].item(),curr_val['percentChange'].item())
+  st.write("Underlying Value:",curr_val['last'].item(),"(",np.round(curr_val['variation'].item(),2),curr_val['percentChange'].item(),")")
+  #st.write(np.round(curr_val['variation'].item(),2),curr_val['percentChange'].item())
 
 today= date.today()
 start_date=today-timedelta(10)
