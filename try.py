@@ -150,6 +150,6 @@ shares = pd.read_csv("FNO INDICES.csv")
 share_list = list(shares["SYMBOL"])
 selected_option = st.selectbox("Share List", share_list)
 st.write("Start Date:", start_date, "Today's Date:", today)
-print_curr_val(list(shares["CURR_VAL_SYMB"])[share_list.index(selected_option)])
+#print_curr_val(list(shares["CURR_VAL_SYMB"])[share_list.index(selected_option)])
 extract_monthly_futidx_data(start_date, today, selected_option)
 
